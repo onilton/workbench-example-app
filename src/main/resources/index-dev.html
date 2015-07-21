@@ -3,17 +3,18 @@
 <head>
   <title>Example Scala.js application</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
 </head>
 <body style="margin: 0px">
 
 <div>
-    <canvas style="display: block" id="canvas" width="255" height="255"/>
+    <div style="display: block" id="container" width="255" height="255"><span>
 </div>
 
 <script type="text/javascript" src="../example-fastopt.js"></script>
 <script type="text/javascript" src="/workbench.js"></script>
 <script>
-    example.ScalaJSExample().main(document.getElementById('canvas'));
+    example.ScalaJSExample().main(document.getElementById('container'));
 </script>
 </body>
 </html>
