@@ -1,13 +1,10 @@
 package example
-import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom
-import scala.scalajs.js
 import org.scalajs.dom.html
-import scala.util.Random
-//import scalatags.Text.all._
+
+import scala.scalajs.js.annotation.JSExport
 import scalatags.JsDom.all._
 import scalatags.stylesheet._
-
 
 @JSExport
 object ScalaJSExample {
@@ -56,13 +53,13 @@ object ScalaJSExample {
     myInput.onkeyup = (e: dom.Event) => {
       myOutput.innerHTML = myInput.value
       stationsUl.innerHTML = ""
-      val searchString = myInput.value.toLowerCase()
+      val searchString = myInput.value.toLowerCase
 //      stations.filter(_.toLowerCase.startsWith(searchString)).foreach { station => 
       stations.filter(_.toLowerCase.contains(searchString)).foreach { station =>
 
         
         //stationsUl.appendChild(li(station).render)
-        val (highlightedText, tail) = station.splitAt(searchString.size)
+        val (highlightedText, tail) = station.splitAt(searchString.length)
         stationsUl.appendChild(li(fade,
           span(highlightedImproved, highlightedText), tail
         ).render)
